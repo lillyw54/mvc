@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div class="wrapper">
+    <header>
+        <h1 class="has-text-dark px-3 py-3 has-text-weight-bold">Release The Stress</h1>
+        <h2 class="has-text-primary px-3 py-3">A blog allowing you to vent without any judgment.</h2>
+        <h2 class="has-text-dark px-3 py-3 has-text-weight-bold">Live.Love. Mom.</h2>
+  <nav class="navbar mt-2">
+  {{{#if loggedIn}}}
+  <a href="/" class="navbar-item is-hoverable pt-1">HOME</a>
+  <a href="/dashboard" class="navbar-item is-hoverable pt-1">DASHBOARD</a>
+  <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">CREATE</a>
+  <button id="logout" class="button is-danger">LOGOUT</button>
+  {{{else}}}
+  <a href="/" class="navbar-item is-hoverable pt-1">HOME</a>
+  <a href="/login" class="button is-primary">LOGIN</a>
+  {{{/if}}}
+</nav>
+
+    <main>
+            {{{ body }}}
+    </main>
+
+    <footer class="footer rows pb-2">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="/">HOME</a>{{{#if loggedIn}}} | 
+            <a href="/dashboard/">DASHBOARD</a> | 
+            <a href="/dashboard/create/">CREATE</a>
+            {{{else}}}
+             | <a href="/login/">LOGIN</a>
+            {{{/if}}}
+            </p>
+        </div>
+      <div class="row-is-full content has-text-centered">
+     <p class="has-text-centered">
+          <strong>Live. Love. Mom.</strong>
+        </p>
+  </div>
+    </footer>
+  </div>
+
+{{{#if loggedIn}}}
+<script src="/javascript/logout.js"></script>
+{{{/if}}}
+</body>
+
+</html>
